@@ -1,0 +1,10 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true,
+    "source.fixAll.eslint": true
+  },
+  "livePreview.defaultPreviewPath": "/packages/test-app/dist/index.html",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "cssVarriablesAutocomplete.files": ["./packages/node/src/views/variables.css"]
+}

@@ -1,0 +1,10 @@
+.navbar_box {
+  width: 100vw;
+  padding: 15px 30px;
+}
+
+.navbar_box > a {
+  margin-right: 14px;
+  text-decoration: none;
+  color: var(--main-text-color);
+}

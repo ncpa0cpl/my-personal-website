@@ -1,0 +1,17 @@
+{
+  "devDependencies": {
+    "snowpack": "^3.8.8",
+    "snowpack-plugin-import-map": "^1.2.0"
+  },
+  "name": "browser",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "snowpack build",
+    "watch": "snowpack build --watch",
+    "test:lint": "eslint .",
+    "test:tsc": "tsc --noEmit",
+    "test:jest": "jest --coverage",
+    "test": "yarn test:tsc && yarn test:lint && yarn test:jest"
+  },
+  "dependencies": {}
+}
