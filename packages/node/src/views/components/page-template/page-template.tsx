@@ -1,4 +1,5 @@
 import { stylesheet } from "../../../global-stylesheet";
+import { LocalizationContextProvider } from "../../contexts/localization-context/provider";
 
 const DEFAULT_PAGE_TITLE = "Page Title";
 
@@ -15,7 +16,11 @@ export const PageBase = (
         <style type="text/css">{stylesheet}</style>
         <script src="/static/main.mjs" type="module"></script>
       </head>
-      <body>{props.children}</body>
+      <body>
+        <LocalizationContextProvider>
+          {props.children}
+        </LocalizationContextProvider>
+      </body>
     </html>
   );
 };

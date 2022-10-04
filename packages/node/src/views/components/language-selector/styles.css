@@ -1,0 +1,27 @@
+.lang-flag-circle_element {
+  width: 25px;
+  height: 25px;
+}
+
+.lang-change-link_element {
+  display: flex;
+  align-items: center;
+  width: 64px;
+  height: 42px;
+  padding: 0px 12px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.lang-change-link_element:hover {
+  background-color: rgb(0 0 0 / 10%);
+}
+
+.lang-change-link_element p {
+  color: var(--main-text-color);
+}
+
+.lang-change-link_element object {
+  z-index: -1;
+  margin-right: 6px;
+}

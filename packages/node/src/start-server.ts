@@ -1,24 +1,43 @@
+import cors from "cors";
 import express from "express";
 import "reflect-metadata";
 import StatusCode from "status-code-enum";
+import { setupDefaultHeadersMiddleware } from "./middlewares/default-headers.middleware";
+import { setupLanguageSelectionMiddleware } from "./middlewares/language-selection-middleware";
 import { Routes } from "./routes";
 import { addRoutes } from "./utilities/add-routes";
+import { isDev } from "./utilities/is-dev";
 import { Log } from "./utilities/log";
+import { setupSession } from "./utilities/setup-session";
 
 const PORT = process.env.PORT || 8080;
 
 const start = async () => {
   try {
-    const serverApp = express();
-    serverApp.use(express.json());
+    const server = express();
 
-    addRoutes(serverApp, Routes);
+    // #region Middlewares
+    server.use(
+      cors({
+        origin: [isDev() ? "*" : "<put-production-domain-here>"],
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        credentials: true,
+      })
+    );
+    server.use(express.json());
+    setupDefaultHeadersMiddleware(server);
+    setupSession(server);
+    setupLanguageSelectionMiddleware(server);
+    // #endregion
 
-    serverApp.all("*", (_, req) => {
+    // #region Routes
+    addRoutes(server, Routes);
+    server.all("*", (_, req) => {
       req.sendStatus(StatusCode.ClientErrorBadRequest);
     });
+    // #endregion
 
-    serverApp.listen(PORT, () => {
+    server.listen(PORT, () => {
       Log.info("Server started");
       console.log(
         `Server started, listening on port ${PORT}\n> http://localhost:${PORT}`

@@ -1,0 +1,47 @@
+.pop-down_box {
+  position: relative;
+}
+
+.pop-down-hidden-content-container_box {
+  position: absolute;
+  top: 100%;
+  transition: max-height 1s;
+  overflow-y: hidden;
+  height: fit-content;
+  max-height: 0px;
+}
+
+.pop-down-hidden-content-container_box.left {
+  left: 0px;
+}
+
+.pop-down-hidden-content-container_box.right {
+  right: 0px;
+}
+
+.pop-down_box:hover .pop-down-hidden-content-container_box {
+  max-height: 200px;
+}
+
+.pop-down-hidden-content_box {
+  margin-top: 10px;
+  height: fit-content;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  transition: opacity 0.5s, background-color 0.5s;
+}
+
+.pop-down_box:hover .pop-down-hidden-content_box {
+  background-color: rgba(0 0 0 / 5%);
+}
+
+.pop-down-hidden-content_box > * {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.pop-down_box:hover .pop-down-hidden-content_box > * {
+  opacity: 0.99;
+}

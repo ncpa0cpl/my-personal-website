@@ -3,6 +3,7 @@
     "@types/jest": "^27.5.0",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
+    "concurrently": "^7.4.0",
     "esbuild": "^0.15.6",
     "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
@@ -19,7 +20,9 @@
   "version": "1.0.0",
   "scripts": {
     "build": "yarn workspaces run build",
-    "watch": "echo yarn workspace back-end run build && echo yarn workspace web-components run build && (echo yarn workspace back-end run watch; echo yarn workspace web-components run watch) | parallel",
+    "watch:node": "yarn workspace node run watch",
+    "watch:browser": "yarn workspace browser run watch",
+    "watch": "concurrently \"yarn watch:node\" \"yarn watch:browser\"",
     "test:lint": "yarn workspaces run test:lint",
     "test:tsc": "yarn workspaces run test:tsc",
     "test:jest": "yarn workspaces run test:jest",

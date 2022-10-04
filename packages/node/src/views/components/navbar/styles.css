@@ -1,10 +1,20 @@
 .navbar_box {
-  width: 100vw;
-  padding: 15px 30px;
+  width: calc(100vw - 60px);
+  padding: 15px 60px 15px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 .navbar_box > a {
   margin-right: 14px;
   text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar_box > a > p {
   color: var(--main-text-color);
+  margin: unset;
 }

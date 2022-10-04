@@ -10,8 +10,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "declaration": true,
-    "noUnusedLocals": false,
-    "types": ["svelte"]
+    "noUnusedLocals": false
   },
   "exclude": ["*.config.js"]
 }
