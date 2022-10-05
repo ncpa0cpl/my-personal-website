@@ -1,0 +1,11 @@
+.link-btn_element {
+  padding: var(--spacing-medium) var(--spacing-huge);
+  border-radius: var(--btn-border-radius);
+  background-color: rgba(var(--rgb-cover), 0.08);
+  transition: background-color 0.35s ease;
+  user-select: none;
+}
+
+.link-btn_element:hover {
+  background-color: rgba(var(--rgb-cover), 0.2);
+}

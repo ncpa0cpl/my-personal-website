@@ -1,0 +1,32 @@
+.navbar_box {
+  width: -webkit-fill-available;
+  width: -moz-available;
+  padding: var(--spacing-huge) 5% var(--spacing-big);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  place-self: center;
+  position: sticky;
+  top: 0;
+  background-color: rgb(var(--rgb-background));
+}
+
+.navbar_box > a {
+  margin-right: var(--spacing-medium);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar_box > a > p {
+  color: rgb(var(--rgb-text));
+  margin: unset;
+}
+
+.navbar_box .lang-selector_box {
+  margin-left: var(--spacing-big);
+  display: flex;
+  align-items: center;
+}

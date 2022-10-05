@@ -14,12 +14,12 @@ cssFiles.sort((a, b) => a.path.split("/").length - b.path.split("/").length);
 let stylesheet = "";
 
 for (const cssFile of cssFiles) {
-  const clean = stripCssComments(cssFile.content);
-  stylesheet += `\n/* ${cssFile.path} */\n${clean}`;
-}
-
-if (!isDev()) {
-  stylesheet = minify(stylesheet).css;
+  if (isDev()) {
+    stylesheet += `\n<style>${cssFile.content}</style>`;
+  } else {
+    const clean = minify(stripCssComments(cssFile.content));
+    stylesheet += `\n<style>${clean.css}</style>`;
+  }
 }
 
 export { stylesheet };

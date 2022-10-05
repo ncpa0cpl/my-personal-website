@@ -1,0 +1,5 @@
+.card_box {
+  border-radius: var(--std-border-radius);
+  padding: var(--spacing-big);
+  background-color: rgba(var(--rgb-cover), 0.1);
+}

@@ -15,7 +15,7 @@ export const readGlob = (pattern: string, cwd?: string) => {
   return files.map((file) => {
     const fullFilePath = path.resolve(cwd!, "./" + file);
     return {
-      path: path.relative(cwd!, fullFilePath),
+      path: fullFilePath,
       content: fs.readFileSync(fullFilePath, {
         encoding: "utf8",
       }),

@@ -1,0 +1,16 @@
+theme-switch {
+  width: 25px;
+  height: 25px;
+  margin-left: var(--spacing-big);
+  border-radius: var(--btn-border-radius);
+  padding: var(--spacing-small);
+}
+
+theme-switch:hover {
+  background-color: rgba(var(--rgb-cover), 0.4);
+  cursor: pointer;
+}
+
+theme-switch object {
+  height: 100%;
+}

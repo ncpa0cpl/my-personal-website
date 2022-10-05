@@ -8,20 +8,20 @@
   align-items: center;
   width: 64px;
   height: 42px;
-  padding: 0px 12px;
-  border-radius: 20px;
+  padding: 0px var(--spacing-big);
+  border-radius: var(--btn-border-radius);
   text-decoration: none;
 }
 
 .lang-change-link_element:hover {
-  background-color: rgb(0 0 0 / 10%);
+  background-color: rgba(var(--rgb-cover), 0.2);
 }
 
 .lang-change-link_element p {
-  color: var(--main-text-color);
+  color: rgb(var(--rgb-text));
 }
 
 .lang-change-link_element object {
   z-index: -1;
-  margin-right: 6px;
+  margin-right: var(--spacing-medium);
 }

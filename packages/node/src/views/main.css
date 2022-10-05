@@ -1,5 +1,31 @@
+@font-face {
+  font-family: "Open Sans";
+  src: url("/static/assets/fonts/OpenSans.ttf");
+}
+
+@font-face {
+  font-family: "Lexend";
+  src: url("/static/assets/fonts/Lexend.ttf");
+}
+
+* {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  transition: color 0.025s ease-in-out, background-color 0.3s;
+}
+
 body {
-  background-color: var(--color-white);
-  width: 100vw;
+  background-color: rgb(var(--rgb-background));
+  width: 100%;
   margin: unset;
+  color: rgb(var(--rgb-text));
+  display: flex;
+  flex-direction: column;
+}
+
+.web-frame-content {
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

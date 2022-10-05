@@ -1,8 +1,8 @@
 import type { Express } from "express";
 import { registerFrameView } from "jsxte-web-frames";
-import { CareerPage } from "../../views/frames/career-page";
-import { HobbyProjectsPage } from "../../views/frames/hobyy-projects-page";
-import { HomePage } from "../../views/frames/home-page";
+import { CareerPage } from "../../views/frames/career-page/career-page";
+import { HobbyProjectsPage } from "../../views/frames/hobby-projects-page/hobyy-projects-page";
+import { HomePage } from "../../views/frames/home-page/home-page";
 import { RootPage } from "../../views/root-page";
 import { MainUrl } from "./main-urls";
 

@@ -1,6 +1,37 @@
 :root {
-  --main-text-color: rgb(27, 27, 27);
-  --main-error-color: rgb(185, 12, 12);
-  --main-primary-btn-color: rgb(74, 128, 243);
-  --color-white: rgb(245, 245, 245);
+  /* Main Palette */
+  --rgb-background: 245, 245, 245;
+  --rgb-cover: 130, 130, 130;
+
+  /* Typography */
+  --rgb-text: 27, 27, 27;
+
+  /* Specialized */
+  --rgb-error: 185, 12, 12;
+  --rgb-primary-btn: 74, 128, 243;
+  --rgb-primary-btn-text: 240, 240, 240;
+
+  /* Non-themed */
+  --spacing-small: 4px;
+  --spacing-medium: 8px;
+  --spacing-big: 12px;
+  --spacing-huge: 18px;
+  --spacing-max: 24px;
+
+  --std-border-radius: 8px;
+  --btn-border-radius: 20px;
+}
+
+.theme-dark {
+  /* Main Palette */
+  --rgb-background: 36, 36, 36;
+  --rgb-cover: 150, 150, 150;
+
+  /* Typography */
+  --rgb-text: 230, 230, 230;
+
+  /* Specialized */
+  --rgb-error: 175, 0, 0;
+  --rgb-primary-btn: 74, 128, 243;
+  --rgb-primary-btn-text: 240, 240, 240;
 }

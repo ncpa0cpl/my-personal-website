@@ -32,10 +32,12 @@ async function main() {
         platform: "browser",
         loader: {
           ".svg": "copy",
+          ".ttf": "copy",
         },
       },
       extMapping: {
         ".svg": ".svg",
+        ".ttf": ".ttf",
       },
     });
   } catch (e) {

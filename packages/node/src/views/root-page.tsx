@@ -11,7 +11,7 @@ export const RootPage = (): JSX.Element => {
       <WebFrame
         name="root"
         initialUrl="/home"
-        minimumLoadTime={1000}
+        minimumLoadTime={500}
         persistentState={true}
         onError={(reload) => <ErrorMessage reload={reload} />}
         onLoad={() => <Loader />}

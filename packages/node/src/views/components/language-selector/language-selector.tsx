@@ -32,14 +32,12 @@ export const LanguageSelector = (_: {}, context: ContextMap) => {
           </div>
         }
       >
-        <span>
-          <Svg
-            class="lang-flag-circle_element"
-            name={
-              currentLanguage === "en" ? "uk-flag-circle" : "poland-flag-circle"
-            }
-          />
-        </span>
+        <Svg
+          class="lang-flag-circle_element"
+          name={
+            currentLanguage === "en" ? "uk-flag-circle" : "poland-flag-circle"
+          }
+        />
       </PopDown>
     </div>
   );

@@ -15,6 +15,7 @@ async function main() {
         jsx: "transform",
         jsxImportSource: "jsxte",
         platform: "node",
+        sourcemap: "inline",
       },
       extMapping: {
         ".css": ".css",
@@ -33,10 +34,13 @@ async function main() {
         platform: "browser",
         loader: {
           ".svg": "copy",
+          ".ttf": "copy",
         },
+        sourcemap: "inline",
       },
       extMapping: {
         ".svg": ".svg",
+        ".ttf": ".ttf",
       },
       watch: true,
     });

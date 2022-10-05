@@ -24,17 +24,17 @@
 }
 
 .pop-down-hidden-content_box {
-  margin-top: 10px;
+  margin-top: var(--spacing-big);
   height: fit-content;
-  padding: 8px;
+  padding: var(--spacing-medium);
   display: flex;
   flex-direction: column;
-  border-radius: 8px;
+  border-radius: var(--std-border-radius);
   transition: opacity 0.5s, background-color 0.5s;
 }
 
 .pop-down_box:hover .pop-down-hidden-content_box {
-  background-color: rgba(0 0 0 / 5%);
+  background-color: rgba(var(--rgb-cover), 0.1);
 }
 
 .pop-down-hidden-content_box > * {

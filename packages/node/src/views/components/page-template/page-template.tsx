@@ -13,10 +13,10 @@ export const PageBase = (
         <meta http-equiv="x-ua-compatible" content="IE=edge" />
         <title>{props.pageTitle ?? DEFAULT_PAGE_TITLE}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <style type="text/css">{stylesheet}</style>
+        {stylesheet}
         <script src="/static/main.mjs" type="module"></script>
       </head>
-      <body>
+      <body class="theme-dark">
         <LocalizationContextProvider>
           {props.children}
         </LocalizationContextProvider>

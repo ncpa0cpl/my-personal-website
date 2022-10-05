@@ -1,4 +1,4 @@
-import { LocalizationContextProvider } from "../contexts/localization-context/provider";
+import { LocalizationContextProvider } from "../../contexts/localization-context/provider";
 
 export const HobbyProjectsPage = (): JSX.Element => {
   return (

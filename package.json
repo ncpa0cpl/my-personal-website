@@ -45,6 +45,6 @@
     "packages/*"
   ],
   "dependencies": {
-    "jsxte-web-frames": "ncpa0cpl/jsxte-web-frames#1.0.3"
+    "jsxte-web-frames": "ncpa0cpl/jsxte-web-frames#1.0.4"
   }
 }
