@@ -17,7 +17,11 @@ export const LanguageSelector = (_: {}, context: ContextMap) => {
               data-href=".?lang=pl"
               href="./?lang=pl"
             >
-              <Svg class="lang-flag-circle_element" name="poland-flag-circle" />
+              <Svg
+                aria-label="Zmień język na polski"
+                class="lang-flag-circle_element"
+                name="poland-flag-circle"
+              />
               <p>PL</p>
             </a>
             <a
@@ -26,7 +30,11 @@ export const LanguageSelector = (_: {}, context: ContextMap) => {
               data-href=".?lang=en"
               href="./?lang=en"
             >
-              <Svg class="lang-flag-circle_element" name="uk-flag-circle" />
+              <Svg
+                aria-label="Change language to English"
+                class="lang-flag-circle_element"
+                name="uk-flag-circle"
+              />
               <p>EN</p>
             </a>
           </div>
@@ -34,6 +42,7 @@ export const LanguageSelector = (_: {}, context: ContextMap) => {
       >
         <Svg
           class="lang-flag-circle_element"
+          aria-label="Change language"
           name={
             currentLanguage === "en" ? "uk-flag-circle" : "poland-flag-circle"
           }

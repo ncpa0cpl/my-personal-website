@@ -14,12 +14,17 @@
 }
 
 body {
-  background-color: rgb(var(--rgb-background));
+  background-color: rgb(235 235 235);
   width: 100%;
   margin: unset;
   color: rgb(var(--rgb-text));
   display: flex;
   flex-direction: column;
+}
+
+body.theme-dark,
+body.theme-light {
+  background-color: rgb(var(--rgb-background));
 }
 
 .web-frame-content {

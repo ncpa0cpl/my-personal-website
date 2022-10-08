@@ -4,5 +4,4 @@ export enum Translation {
   Home,
   Career,
   HobbyProjects,
-  HomeBanner,
 }

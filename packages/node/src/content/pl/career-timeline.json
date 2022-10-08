@@ -1,0 +1,18 @@
+{
+  "segments": [
+    {
+      "title": "Student Politechniki Białostockiej",
+      "subtitle": "Student",
+      "description": "Studia inżynierskie na Wydziale Informatyki.",
+      "from": "2018-10-01T12:00:00.000Z",
+      "to": "2020-10-01T12:00:00.000Z"
+    },
+    {
+      "title": "Amplifier",
+      "subtitle": "Programista",
+      "description": "Programowanie aplikacji webowych oraz mobilnych przy użyciu technologi React i React Native.",
+      "from": "2020-11-01T12:00:00.000Z",
+      "to": "%NOW%"
+    }
+  ]
+}

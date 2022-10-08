@@ -12,6 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .main-page-banner_box h1 {

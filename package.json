@@ -28,7 +28,8 @@
     "test:jest": "yarn workspaces run test:jest",
     "test": "yarn workspaces run test",
     "start:dev": "yarn workspace node run start:dev",
-    "start": "yarn workspace node run start"
+    "start": "yarn workspace node run start",
+    "generate-content-declarations": "node ./packages/scm/scripts/generate-declaration.cjs -d ./packages/node/src/content -o ./packages/node/src/content/content-key.d.ts -ext .html,.md,.json"
   },
   "keywords": [],
   "repository": {

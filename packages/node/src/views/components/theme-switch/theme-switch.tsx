@@ -20,6 +20,9 @@ export type ThemeSwitchProps = {
 export const ThemeSwitch = (props: ThemeSwitchProps): JSX.Element => {
   return (
     <theme-switch
+      role="button"
+      tabindex="0"
+      aria-label="Toggle site theme"
       data-dark-theme-icon-src={`/static/assets/icons/${props.darkThemeIcon}.svg`}
       data-light-theme-icon-src={`/static/assets/icons/${props.lightThemeIcon}.svg`}
     />

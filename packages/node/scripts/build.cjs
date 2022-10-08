@@ -2,8 +2,11 @@ const { build } = require("@ncpa0cpl/nodepack");
 const path = require("path");
 
 async function main() {
-  try {
-    await build({
+  const isDev = process.env.NODE_ENV === "development";
+  const watch = process.argv.includes("--watch");
+
+  const buildForServer = () =>
+    build({
       target: "es2020",
       tsConfig: path.resolve(__dirname, "../tsconfig.json"),
       srcDir: path.resolve(__dirname, "../src"),
@@ -15,13 +18,22 @@ async function main() {
         jsx: "transform",
         jsxImportSource: "jsxte",
         platform: "node",
+        sourcemap: isDev ? "inline" : undefined,
+        loader: {
+          ".html": "copy",
+          ".json": "copy",
+        },
       },
       extMapping: {
         ".css": ".css",
+        ".html": ".html",
+        ".json": ".json",
       },
+      watch,
     });
 
-    await build({
+  const buildForBrowser = () =>
+    build({
       target: "es2020",
       tsConfig: path.resolve(__dirname, "../tsconfig.json"),
       srcDir: path.resolve(__dirname, "../src"),
@@ -30,6 +42,7 @@ async function main() {
       exclude: [/^(?!.*\/static\/).*/, /\.d\.ts$/],
       esbuildOptions: {
         platform: "browser",
+        sourcemap: isDev ? "inline" : undefined,
         loader: {
           ".svg": "copy",
           ".ttf": "copy",
@@ -39,7 +52,11 @@ async function main() {
         ".svg": ".svg",
         ".ttf": ".ttf",
       },
+      watch,
     });
+
+  try {
+    await Promise.all([buildForServer(), buildForBrowser()]);
   } catch (e) {
     console.error(e);
     process.exit(1);

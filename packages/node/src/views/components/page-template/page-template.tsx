@@ -16,7 +16,8 @@ export const PageBase = (
         {stylesheet}
         <script src="/static/main.mjs" type="module"></script>
       </head>
-      <body class="theme-dark">
+      <body>
+        <script src="/js-modules/theme-switch.js"></script>
         <LocalizationContextProvider>
           {props.children}
         </LocalizationContextProvider>

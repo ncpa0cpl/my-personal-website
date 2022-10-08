@@ -1,0 +1,22 @@
+{
+  "name": "scm",
+  "description": "Simple Content Manager",
+  "authors": "Szymon Bretner (ncpa0cpl)",
+  "version": "1.0.0",
+  "main": "./dist/legacy/index.js",
+  "types": "./dist/types/index.d.ts",
+  "bin": "./scripts/generate-declarations.cjs",
+  "scripts": {
+    "build": "node ./scripts/build.cjs",
+    "watch": "node ./scripts/build.cjs --watch"
+  },
+  "dependencies": {
+    "chalk": "~4",
+    "i18n-locales": "^0.0.5",
+    "node-os-walk": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/node": "^18.8.3"
+  }
+}
