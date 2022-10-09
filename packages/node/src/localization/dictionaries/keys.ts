@@ -4,4 +4,8 @@ export enum Translation {
   Home,
   Career,
   HobbyProjects,
+  MyGithub,
+  MyLinkedin,
+  CheckOutOnGithub,
+  CheckOutOnNpm,
 }

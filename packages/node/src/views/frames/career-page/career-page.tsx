@@ -13,7 +13,7 @@ export const CareerPage = (_: {}, context: ContextMap): JSX.Element => {
   const content = useContent(context);
 
   const timelineSegments =
-    content.json.get<CareerTimelineContent>("career-timeline").segments;
+    content.yaml.get<CareerTimelineContent>("career-timeline").segments;
 
   return (
     <LocalizationContextProvider>

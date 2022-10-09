@@ -4,7 +4,7 @@ import type { ContentEntry, ContentManager } from "./manager";
 export class ContentReader<T, K extends string> {
   private supportedContent: Array<ContentEntry> = [];
   private constructor(
-    private manager: ContentManager,
+    manager: ContentManager<any>,
     loader: ContentLoader<T>,
     language: string
   ) {
@@ -17,5 +17,11 @@ export class ContentReader<T, K extends string> {
     const entry = this.supportedContent.find((entry) => entry.key === key);
     if (!entry) throw new Error(`Content for key ${key} not found.`);
     return entry.content;
+  }
+
+  public getMatches<V = T>(test: RegExp): Array<V> {
+    return this.supportedContent
+      .filter((entry) => test.test(entry.key))
+      .map((entry) => entry.content);
   }
 }

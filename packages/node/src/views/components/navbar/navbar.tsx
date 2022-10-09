@@ -1,6 +1,6 @@
 import type { ContextMap } from "jsxte";
+import { Translation } from "../../../localization/dictionaries/keys";
 import { MainUrl } from "../../../routes/view-routes/main-urls";
-import { Translation } from "../../../utilities/localization/dictionaries/keys";
 import { useTranslation } from "../../contexts/localization-context/use-translation";
 import { LanguageSelector } from "../language-selector/language-selector";
 import { LinkButton } from "../link-button/link-button";

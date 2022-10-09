@@ -1,7 +1,9 @@
 :root {
   /* Main Palette */
   --rgb-background: 245, 245, 245;
+  --rgb-footer-background: 215, 215, 215;
   --rgb-cover: 75, 75, 75;
+  --rgb-active-link: 0, 45, 181;
 
   /* Typography */
   --rgb-text: 27, 27, 27;
@@ -25,7 +27,9 @@
 .theme-dark {
   /* Main Palette */
   --rgb-background: 36, 36, 36;
+  --rgb-footer-background: 21, 21, 21;
   --rgb-cover: 150, 150, 150;
+  --rgb-active-link: 116, 176, 255;
 
   /* Typography */
   --rgb-text: 230, 230, 230;

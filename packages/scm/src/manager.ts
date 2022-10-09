@@ -91,9 +91,9 @@ export class ContentManager<K extends Record<string, string>> {
   }
 
   private testAgainstLoader(loader: ContentLoader<any>, filepath: string) {
-    const ext = path.extname(filepath).toLowerCase();
-    const extSupported = loader.supportedExtensions.some(
-      (e) => e.toLowerCase() === ext
+    const lowercased = filepath.toLowerCase();
+    const extSupported = loader.supportedExtensions.some((e) =>
+      lowercased.endsWith(e.toLowerCase())
     );
 
     if (!extSupported) return false;
@@ -129,10 +129,11 @@ export class ContentManager<K extends Record<string, string>> {
 
     for (const loader of loaders) {
       try {
-        const parsed = await loader.parseContent(
-          Buffer.from(file),
-          path.extname(filepath)
-        );
+        const parsed = await loader.parseContent(Buffer.from(file), {
+          extension: path.extname(filepath),
+          fullPath: filepath,
+          relativePath: relativeLocation,
+        });
         this.contents.push({ loader, content: parsed, key, language });
       } catch (e) {
         console.error(

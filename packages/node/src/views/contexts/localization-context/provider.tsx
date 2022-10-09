@@ -1,6 +1,6 @@
 import type { ContextMap } from "jsxte";
 import { RequestResponseContext } from "jsxte-web-frames";
-import { LocalizationService } from "../../../utilities/localization/localization-service";
+import { LocalizationService } from "../../../localization/localization-service";
 import { Log } from "../../../utilities/log";
 import { LocalizationContext } from "./localization-context";
 

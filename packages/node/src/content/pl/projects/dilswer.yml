@@ -1,0 +1,27 @@
+title: Dilswer
+repository: "https://github.com/ncpa0cpl/dilswer"
+npm: "https://www.npmjs.com/package/dilswer"
+order: 2
+description: |-
+  Biblioteka JavaScript/TypeScript 
+  pozwalająca na walidacje struktur danych.
+
+  Stworzyłem tę bibliotekę aby uporać się 
+  z problemem na który napotkałem się 
+  pracując nad swoimi projektami. Istnieje
+  wiele innych świetnych bibliotek 
+  o podobnym zastosowaniu, jednakże 
+  w większości przypadków musisz stworzyć 
+  a potem utrzymywać aż dwie definicje dla 
+  tej samej struktury danych, pierwszą jest
+  definicja typu w TypeScript, a drugą
+  definicja która służy do walidacji 
+  danych podczas działania programu.
+
+  Dilswer jest moją próbą na rozwiązanie 
+  tego problemu poprzez udostępnieniu 
+  mechanizmu na tworzenie definicji 
+  struktur danych które mogą być 
+  wykorzystane podczas działania programu,
+  jak i podczas jego pisania w systemie
+  TypeScript.

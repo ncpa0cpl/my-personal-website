@@ -22,12 +22,16 @@ async function main() {
         loader: {
           ".html": "copy",
           ".json": "copy",
+          ".yaml": "copy",
+          ".yml": "copy",
         },
       },
       extMapping: {
         ".css": ".css",
         ".html": ".html",
         ".json": ".json",
+        ".yaml": ".yaml",
+        ".yml": ".yml",
       },
       watch,
     });

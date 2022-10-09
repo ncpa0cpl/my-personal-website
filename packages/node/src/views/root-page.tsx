@@ -1,5 +1,6 @@
 import { WebFrame } from "jsxte-web-frames";
 import { ErrorMessage } from "./components/error-message/error-message";
+import { Footer } from "./components/footer/footer";
 import { Loader } from "./components/loader/loader";
 import { Navbar } from "./components/navbar/navbar";
 import { PageBase } from "./components/page-template/page-template";
@@ -16,6 +17,7 @@ export const RootPage = (): JSX.Element => {
         onError={(reload) => <ErrorMessage reload={reload} />}
         onLoad={() => <Loader />}
       />
+      <Footer />
     </PageBase>
   );
 };

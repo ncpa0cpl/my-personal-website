@@ -1,0 +1,17 @@
+segments:
+  [
+    {
+      title: Student of Bialystok University of Technology,
+      subtitle: Student,
+      description: Studied the field of computer science at the Faculty of Information Technology.,
+      from: 2018-10-01T12:00:00.000Z,
+      to: 2020-10-01T12:00:00.000Z,
+    },
+    {
+      title: Amplifier,
+      subtitle: Web Developer,
+      description: Worked on WEB and Mobile solutions with React and React-Native.,
+      from: 2020-11-01T12:00:00.000Z,
+      to: "%NOW%",
+    },
+  ]

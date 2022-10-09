@@ -1,5 +1,5 @@
 import { defineContext } from "jsxte";
-import type { LocalizationService } from "../../../utilities/localization/localization-service";
+import type { LocalizationService } from "../../../localization/localization-service";
 
 export const LocalizationContext = defineContext<{
   language: string;

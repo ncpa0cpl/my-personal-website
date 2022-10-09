@@ -6,5 +6,8 @@
   },
   "livePreview.defaultPreviewPath": "/packages/test-app/dist/index.html",
   "typescript.tsdk": "node_modules/typescript/lib",
-  "cssVarriablesAutocomplete.files": ["./packages/node/src/views/variables.css"]
+  "cssVarriablesAutocomplete.files": [
+    "./packages/node/src/views/variables.css"
+  ],
+  "cSpell.language": "en,pl"
 }

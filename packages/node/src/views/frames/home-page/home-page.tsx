@@ -9,8 +9,10 @@ export const HomePage = (_: {}, context: ContextMap): JSX.Element => {
   return (
     <LocalizationContextProvider>
       <div class="main-page_box">
-        <div class="main-page-banner_box">{content.html.get("banner")}</div>
-        <div class="card-container_box">
+        <header class="main-page-banner_box">
+          {content.html.get("banner")}
+        </header>
+        <main class="card-container_box">
           <Card class="info_box">
             <span class="card-image-placeholder_element"></span>
             <h3>Card Title</h3>
@@ -38,7 +40,7 @@ export const HomePage = (_: {}, context: ContextMap): JSX.Element => {
               aliquet nisl nunc eget lorem.
             </p>
           </Card>
-        </div>
+        </main>
       </div>
     </LocalizationContextProvider>
   );

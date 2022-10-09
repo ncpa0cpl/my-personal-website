@@ -1,4 +1,4 @@
 export declare type ContentKey = {
   ".html": "banner";
-  ".json": "career-timeline";
+  ".yml": "career-timeline" | "projects.dilswer" | "projects.jsxte";
 };

@@ -1,0 +1,13 @@
+title: JSXTE
+repository: "https://github.com/ncpa0cpl/jsxte"
+npm: "https://www.npmjs.com/package/jsxte"
+order: 1
+description: |-
+  JSX based html template engine.
+
+  A template engine intended for Node
+  servers (although it is platform-agnostic). 
+  Allows to render a static html on the 
+  server with a React-like JSX syntax.
+
+  This very page has been created with JSXTE!
