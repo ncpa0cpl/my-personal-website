@@ -3,21 +3,12 @@ repository: "https://github.com/ncpa0cpl/dilswer"
 npm: "https://www.npmjs.com/package/dilswer"
 order: 2
 description: |-
-  A JavaScript/TypeScript data validation 
-  library.
+  A JavaScript/TypeScript data validation library.
 
-  Library that I've created to address an 
-  issue I had when working on some of my 
-  projects. Although there are already great 
-  libraries that help with validating data, 
-  however in most cases you are forced to 
-  define and maintain two separate 
-  definitions of the same data structure, 
-  one to validate at runtime and a TypeScript 
-  type definition.
+  Library that I've created to address an issue I had when working on some of my projects.
+  Although there are already great libraries that help with validating data, however in most cases
+  you are forced to define and maintain two separate definitions of the same data structure,
+  one to validate at runtime and a TypeScript type definition.
 
-  Dilswer is my attempt to provide a 
-  mechanism that would allow to have only 
-  one such type declaration that can be 
-  used both at runtime and within the 
-  TypeScript type system.
+  Dilswer is my attempt to provide a mechanism that would allow to have only one such type declaration
+  that can be used both at runtime and within the TypeScript type system.

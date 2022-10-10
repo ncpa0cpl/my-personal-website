@@ -23,6 +23,8 @@ class AnchorExtended extends HTMLAnchorElement {
         url.searchParams.set(paramName, paramValue);
       }
 
+      url.hash = "";
+
       return url.toString();
     }
 

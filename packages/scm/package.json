@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@types/chalk": "^2.2.0",
-    "@types/node": "^18.8.3"
+    "@types/node": "^18.8.3",
+    "@ncpa0cpl/nodepack": "^2.0.1"
   }
 }

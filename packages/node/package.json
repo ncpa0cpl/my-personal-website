@@ -22,7 +22,7 @@
   "version": "1.0.0",
   "main": "./dist/index.js",
   "scripts": {
-    "start:dev": "NODE_ENV=development nodemon --ignore ./dist/server.log --ignore ./dist/sessions/ --watch ./dist -e js,mjs,cjs,json,css,svg ./dist/legacy/start-server.js",
+    "start:dev": "NODE_ENV=development nodemon --ignore ./dist/server.log --ignore ./dist/sessions/ --watch ./dist -e js,mjs,cjs,json,css,svg,html,yml,yaml ./dist/legacy/start-server.js",
     "start": "NODE_ENV=production node ./dist/legacy/start-server.js",
     "build": "rm -rf ./dist/legacy && node ./scripts/build.cjs",
     "watch": "node ./scripts/build.cjs --watch",

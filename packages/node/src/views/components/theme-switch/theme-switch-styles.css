@@ -4,6 +4,9 @@ theme-switch {
   margin-left: var(--spacing-big);
   border-radius: var(--btn-border-radius);
   padding: var(--spacing-small);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 theme-switch:hover {
@@ -13,4 +16,24 @@ theme-switch:hover {
 
 theme-switch object {
   height: 100%;
+}
+
+theme-switch p {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  theme-switch {
+    width: unset;
+    height: 34px;
+    margin-bottom: var(--spacing-max);
+    padding-left: var(--spacing-huge);
+    padding-right: var(--spacing-big);
+  }
+
+  theme-switch p {
+    display: block;
+    font-size: 18px;
+    margin-right: var(--spacing-medium);
+  }
 }

@@ -15,6 +15,7 @@ declare global {
 export type ThemeSwitchProps = {
   darkThemeIcon: SvgName;
   lightThemeIcon: SvgName;
+  label?: string;
 };
 
 export const ThemeSwitch = (props: ThemeSwitchProps): JSX.Element => {
@@ -23,6 +24,7 @@ export const ThemeSwitch = (props: ThemeSwitchProps): JSX.Element => {
       role="button"
       tabindex="0"
       aria-label="Toggle site theme"
+      data-text={props.label}
       data-dark-theme-icon-src={`/static/assets/icons/${props.darkThemeIcon}.svg`}
       data-light-theme-icon-src={`/static/assets/icons/${props.lightThemeIcon}.svg`}
     />

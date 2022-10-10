@@ -1,5 +1,6 @@
 class ThemeSwitch extends HTMLElement {
   private svgObject: HTMLObjectElement | undefined;
+  private textElement: HTMLElement | undefined;
 
   get darkThemeIconSrc() {
     return this.getAttribute("data-dark-theme-icon-src");
@@ -7,6 +8,10 @@ class ThemeSwitch extends HTMLElement {
 
   get lightThemeIconSrc() {
     return this.getAttribute("data-light-theme-icon-src");
+  }
+
+  get text() {
+    return this.getAttribute("data-text");
   }
 
   private updateIcon() {
@@ -29,6 +34,7 @@ class ThemeSwitch extends HTMLElement {
       this.svgObject.style.pointerEvents = "none";
 
       this.innerHTML = "";
+      if (this.textElement) this.append(this.textElement);
       this.append(this.svgObject);
     }
   }
@@ -63,6 +69,11 @@ class ThemeSwitch extends HTMLElement {
   };
 
   connectedCallback() {
+    if (this.text) {
+      this.textElement = document.createElement("p");
+      this.textElement.innerText = this.text;
+    }
+
     this.updateIcon();
     this.addEventListener("click", this.handleClick);
   }

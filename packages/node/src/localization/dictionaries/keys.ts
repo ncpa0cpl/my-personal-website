@@ -8,4 +8,5 @@ export enum Translation {
   MyLinkedin,
   CheckOutOnGithub,
   CheckOutOnNpm,
+  ChangeTheme,
 }

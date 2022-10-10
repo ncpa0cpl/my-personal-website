@@ -3,16 +3,10 @@ repository: "https://github.com/ncpa0cpl/jsxte"
 npm: "https://www.npmjs.com/package/jsxte"
 order: 1
 description: |-
-  Silnik szablonów html bazujący na 
-  składni JSX.
+  Silnik szablonów html bazujący na składni JSX.
 
-  Jest to silnik szablonów html przeznaczony
-  do użytku w aplikacjach serwerowych Node
-  (aczkolwiek działa również w innych 
-  środowiskach). Pozwala on na generowanie
-  statycznego kodu html po stronie serwera
-  przy użyciu składni JSX podobnej do tej
-  znanej z React'a.
+  Jest to silnik szablonów html przeznaczony do użytku w aplikacjach serwerowych Node
+  (aczkolwiek działa również w innych środowiskach). Pozwala on na generowanie statycznego kodu html
+  po stronie serweraprzy użyciu składni JSX podobnej do tej znanej z React'a.
 
-  Ta strona została zbudowana przy użyciu
-  JSXTE!
+  Ta strona została zbudowana przy użyciu JSXTE!

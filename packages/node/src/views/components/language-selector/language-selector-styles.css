@@ -25,3 +25,27 @@
   z-index: -1;
   margin-right: var(--spacing-medium);
 }
+
+.lang-selector-mobile-only_box {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .lang-selector_box {
+    justify-content: center;
+  }
+
+  .lang-selector_box .pop-down_box {
+    display: none;
+  }
+
+  .lang-selector-mobile-only_box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  a.lang-change-link_element {
+    margin-bottom: var(--spacing-medium);
+    padding: 0px;
+  }
+}

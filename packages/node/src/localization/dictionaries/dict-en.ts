@@ -9,4 +9,5 @@ export const TranslationsEN: TranslationDictionary = {
   [Translation.MyLinkedin]: "My LinkedIn",
   [Translation.CheckOutOnGithub]: "Check it out on Github!",
   [Translation.CheckOutOnNpm]: "Check it out on Npm!",
+  [Translation.ChangeTheme]: "Change theme",
 };

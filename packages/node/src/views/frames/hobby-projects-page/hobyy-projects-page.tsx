@@ -33,7 +33,7 @@ export const HobbyProjectsPage = (_: {}, context: ContextMap): JSX.Element => {
                 <Card class="project-card_box">
                   <h3>{project.title}</h3>
                   <pre aria-label="Project description">
-                    {project.description}
+                    {project.description.replace(/([^\n])\n([^\n])/g, "$1 $2")}
                   </pre>
                   <div class="project-car-links_element">
                     {project.repository && (

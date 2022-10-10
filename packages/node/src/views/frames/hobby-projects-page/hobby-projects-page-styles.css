@@ -1,66 +1,67 @@
 .projects-page_box {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
 }
 
 .projects-page_box ul,
 .projects-page_box li {
-    display: contents;
-    padding: 0px;
-    margin: 0px;
+  display: contents;
+  padding: 0px;
+  margin: 0px;
 }
 
 .projects-page_box header {
-    margin-bottom: var(--spacing-medium);
+  margin-bottom: var(--spacing-medium);
 }
 
 .projects-page_box main {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: fill-available;
-    width: -moz-available;
-    width: -webkit-fill-available;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: fill-available;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  justify-content: center;
 }
 
 .project-card_box {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: var(--spacing-big);
-    width: clamp(275px, 25%, 375px);
-    font-size: 18px;
-    padding: var(--spacing-max);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: var(--spacing-big);
+  width: clamp(275px, 25%, 375px);
+  font-size: 18px;
+  padding: var(--spacing-max);
 }
 
 .project-card_box pre {
-    flex-grow: 1;
+  flex-grow: 1;
+  white-space: pre-wrap;
 }
 
 .project-card_box h3 {
-    place-self: center;
+  place-self: center;
 }
 
 .project-card_box a {
-    text-decoration: none;
-    color: rgb(var(--rgb-text));
-    text-decoration: underline;
-    text-align: end;
+  text-decoration: none;
+  color: rgb(var(--rgb-text));
+  text-decoration: underline;
+  text-align: end;
 }
 
 .project-card_box a:not(:last-child) {
-    margin-bottom: var(--spacing-medium);
+  margin-bottom: var(--spacing-medium);
 }
 
 .project-card_box a:hover {
-    color: rgb(var(--rgb-active-link));
+  color: rgb(var(--rgb-active-link));
 }
 
 .project-car-links_element {
-    margin-top: var(--spacing-big);
-    display: flex;
-    flex-direction: column;
+  margin-top: var(--spacing-big);
+  display: flex;
+  flex-direction: column;
 }

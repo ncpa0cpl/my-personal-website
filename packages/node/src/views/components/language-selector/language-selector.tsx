@@ -6,37 +6,45 @@ import { Svg } from "../svg/svg";
 export const LanguageSelector = (_: {}, context: ContextMap) => {
   const currentLanguage = useCurrentLanguage(context);
 
+  const renderLanguageSwitchButtons = () => {
+    return (
+      <>
+        <a
+          class="lang-change-link_element"
+          is="anchor-extended"
+          data-href=".?lang=pl"
+          href="./?lang=pl"
+        >
+          <Svg
+            aria-label="Zmień język na polski"
+            class="lang-flag-circle_element"
+            name="poland-flag-circle"
+          />
+          <p>PL</p>
+        </a>
+        <a
+          class="lang-change-link_element"
+          is="anchor-extended"
+          data-href=".?lang=en"
+          href="./?lang=en"
+        >
+          <Svg
+            aria-label="Change language to English"
+            class="lang-flag-circle_element"
+            name="uk-flag-circle"
+          />
+          <p>EN</p>
+        </a>
+      </>
+    );
+  };
+
   return (
     <div class="lang-selector_box">
       <PopDown
         content={
           <div class="lang-selector-link-container_box">
-            <a
-              class="lang-change-link_element"
-              is="anchor-extended"
-              data-href=".?lang=pl"
-              href="./?lang=pl"
-            >
-              <Svg
-                aria-label="Zmień język na polski"
-                class="lang-flag-circle_element"
-                name="poland-flag-circle"
-              />
-              <p>PL</p>
-            </a>
-            <a
-              class="lang-change-link_element"
-              is="anchor-extended"
-              data-href=".?lang=en"
-              href="./?lang=en"
-            >
-              <Svg
-                aria-label="Change language to English"
-                class="lang-flag-circle_element"
-                name="uk-flag-circle"
-              />
-              <p>EN</p>
-            </a>
+            {renderLanguageSwitchButtons()}
           </div>
         }
       >
@@ -48,6 +56,9 @@ export const LanguageSelector = (_: {}, context: ContextMap) => {
           }
         />
       </PopDown>
+      <div class="lang-selector-mobile-only_box">
+        {renderLanguageSwitchButtons()}
+      </div>
     </div>
   );
 };

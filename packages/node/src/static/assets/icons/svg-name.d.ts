@@ -1,1 +1,1 @@
-export declare type SvgName = "dark-theme" | "github" | "light-theme" | "linkedin" | "poland-flag-circle" | "spinner" | "uk-flag-circle";
+export declare type SvgName = "close" | "dark-theme" | "github" | "light-theme" | "linkedin" | "menu-burger" | "poland-flag-circle" | "spinner" | "uk-flag-circle";
