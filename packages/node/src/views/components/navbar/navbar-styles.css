@@ -10,6 +10,8 @@
   position: sticky;
   top: 0;
   background-color: rgb(var(--rgb-background));
+  overscroll-behavior: contain;
+  overflow-y: scroll;
 }
 
 .navbar-mobile-only-open-btn-container_box {
@@ -80,7 +82,7 @@
   align-items: center;
 }
 
-.navbar .navbar-links-section_element a > p {
+.navbar .navbar-links-section_element a>p {
   color: rgb(var(--rgb-text));
   margin: unset;
 }
