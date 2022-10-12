@@ -4849,9 +4849,9 @@ jsprim@^1.2.2:
     json-schema "0.4.0"
     verror "1.10.0"
 
-jsxte-web-frames@ncpa0cpl/jsxte-web-frames#1.0.4:
-  version "1.0.4"
-  resolved "https://codeload.github.com/ncpa0cpl/jsxte-web-frames/tar.gz/5fd71a7beec9edb13ec76ececa8e7694f49baac6"
+jsxte-web-frames@ncpa0cpl/jsxte-web-frames#1.0.6:
+  version "1.0.6"
+  resolved "https://codeload.github.com/ncpa0cpl/jsxte-web-frames/tar.gz/5b8300311fcf1eee7c31f23aa9b69fb92844063e"
 
 jsxte@^2.2.1:
   version "2.2.1"
