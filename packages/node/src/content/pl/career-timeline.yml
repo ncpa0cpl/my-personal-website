@@ -1,6 +1,7 @@
 segments:
   [
     {
+      id: 0,
       title: Student Politechniki Białostockiej,
       subtitle: Student,
       description: Studia inżynierskie na Wydziale Informatyki.,
@@ -8,6 +9,7 @@ segments:
       to: 2020-10-01T12:00:00.000Z,
     },
     {
+      id: amplifier,
       title: Amplifier,
       subtitle: Programista,
       description: Programowanie aplikacji webowych oraz mobilnych przy użyciu technologi React i React Native.,

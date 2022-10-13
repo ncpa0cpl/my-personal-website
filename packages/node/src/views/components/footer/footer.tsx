@@ -1,7 +1,7 @@
 import type { ContextMap } from "jsxte";
 import { Link } from "jsxte-web-frames";
+import { AppRoutes } from "../../../app-routes";
 import { Translation } from "../../../localization/dictionaries/keys";
-import { MainUrl } from "../../../routes/view-routes/main-urls";
 import { useTranslation } from "../../contexts/localization-context/use-translation";
 import { Svg } from "../svg/svg";
 
@@ -13,17 +13,17 @@ export const Footer = (_: {}, context: ContextMap) => {
       <section class="footer-links_box">
         <ul>
           <li>
-            <Link frameName="root" href={MainUrl.Home}>
+            <Link frameName="root" href={AppRoutes.home.$()}>
               <p>{t(Translation.Home)}</p>
             </Link>
           </li>
           <li>
-            <Link frameName="root" href={MainUrl.Career}>
+            <Link frameName="root" href={AppRoutes.career.$()}>
               <p>{t(Translation.Career)}</p>
             </Link>
           </li>
           <li>
-            <Link frameName="root" href={MainUrl.HobbyProjects}>
+            <Link frameName="root" href={AppRoutes.projects.$()}>
               <p>{t(Translation.HobbyProjects)}</p>
             </Link>
           </li>

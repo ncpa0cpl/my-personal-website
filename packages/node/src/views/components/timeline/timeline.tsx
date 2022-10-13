@@ -1,6 +1,9 @@
+import { Link } from "jsxte-web-frames";
 import { DateTime } from "luxon";
+import { AppRoutes } from "../../../app-routes";
 
 export type TimelineSegment = {
+  id: string | number;
   title: string;
   subtitle: string;
   description: string;
@@ -30,7 +33,9 @@ export const Timeline = (props: TimelineProps) => {
           </div>
           <div class="timeline-segment-content_element">
             <div class="timeline-segment-title_element">
-              <h3>{segment.title}</h3>
+              <Link href={AppRoutes.career.company.$as(segment.id).$()}>
+                <p>{segment.title}</p>
+              </Link>
             </div>
             <div class="timeline-segment-subtitle_element">
               <h5>{segment.subtitle}</h5>

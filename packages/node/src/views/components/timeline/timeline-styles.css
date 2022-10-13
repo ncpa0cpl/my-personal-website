@@ -1,11 +1,11 @@
 .career-timeline-card_box {
-    padding: var(--spacing-max);
+  padding: var(--spacing-max);
 }
 
 .timeline_box {
-    display: flex;
-    flex-direction: column;
-    padding-left: 0px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0px;
 }
 
 .timeline_box h1,
@@ -14,57 +14,73 @@
 .timeline_box h4,
 .timeline_box h5,
 .timeline_box p {
-    margin: 0px;
+  margin: 0px;
 }
 
-
 .timeline-segment_element {
-    display: flex;
+  display: flex;
 }
 
 .timeline-segment-decoration_element {
-    margin-right: var(--spacing-big);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin-right: var(--spacing-big);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .timeline-segment-dot_element {
-    border-radius: 100px;
-    width: 10px;
-    height: 10px;
-    background-color: rgba(var(--rgb-cover), 0.75);
-    margin-bottom: var(--spacing-medium);
-    margin-top: var(--spacing-medium);
+  border-radius: 100px;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(var(--rgb-cover), 0.75);
+  margin-bottom: var(--spacing-medium);
+  margin-top: 10px; /* needs to be exactly 10 to match the line height */
 }
 
 .timeline-segment-line_element {
-    width: 2px;
-    background-color: rgba(var(--rgb-cover), 0.75);
-    min-height: 35px;
-    flex-grow: 1;
-    margin-bottom: var(--spacing-small);
+  width: 2px;
+  background-color: rgba(var(--rgb-cover), 0.75);
+  min-height: 35px;
+  flex-grow: 1;
 }
 
 .timeline-segment-content_element {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .timeline-segment-title_element {
-    margin-bottom: var(--spacing-small);
+  margin-bottom: var(--spacing-small);
+}
+
+.timeline-segment-title_element a {
+  text-decoration: none;
+  color: rgb(var(--rgb-text));
+}
+
+.timeline-segment-title_element a:hover {
+  color: rgb(var(--rgb-active-link));
+}
+
+.timeline-segment-title_element :is(a, p) {
+  width: fit-content;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  font-size: 1.17em;
+  display: block;
+  font-weight: bold;
 }
 
 .timeline-segment-subtitle_element {
-    margin-bottom: var(--spacing-medium);
+  margin-bottom: var(--spacing-medium);
 }
 
 .timeline-segment-description_element {
-    margin-bottom: var(--spacing-medium);
+  margin-bottom: var(--spacing-medium);
 }
 
 .timeline-segment-date_element p {
-    font-weight: bold;
-    font-size: 14px;
-    margin-bottom: var(--spacing-max);
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: var(--spacing-max);
 }

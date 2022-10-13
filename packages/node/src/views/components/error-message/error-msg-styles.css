@@ -9,7 +9,7 @@
 
 .error-msg_box > h2 {
   color: rgb(var(--rgb-error));
-  margin-bottom: var(--spacing-medium);
+  margin-bottom: var(--spacing-huge);
 }
 
 .error-msg_box > button {
@@ -18,4 +18,9 @@
   border-radius: var(--btn-border-radius);
   background-color: rgb(var(--rgb-primary-btn));
   color: rgb(var(--rgb-primary-btn-text));
+}
+
+.error-msg_box > button:hover {
+  cursor: pointer;
+  filter: opacity(0.8);
 }

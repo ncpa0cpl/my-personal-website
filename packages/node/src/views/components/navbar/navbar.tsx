@@ -1,6 +1,6 @@
 import type { ContextMap } from "jsxte";
+import { AppRoutes } from "../../../app-routes";
 import { Translation } from "../../../localization/dictionaries/keys";
-import { MainUrl } from "../../../routes/view-routes/main-urls";
 import { useTranslation } from "../../contexts/localization-context/use-translation";
 import { LanguageSelector } from "../language-selector/language-selector";
 import { LinkButton } from "../link-button/link-button";
@@ -19,13 +19,13 @@ export const Navbar = (_: {}, context: ContextMap): JSX.Element => {
           </a>
         </div>
         <div class="navbar-links-section_element">
-          <LinkButton frameName="root" href={MainUrl.Home}>
+          <LinkButton frameName="root" href={AppRoutes.home.$()}>
             <p>{t(Translation.Home)}</p>
           </LinkButton>
-          <LinkButton frameName="root" href={MainUrl.Career}>
+          <LinkButton frameName="root" href={AppRoutes.career.$()}>
             <p>{t(Translation.Career)}</p>
           </LinkButton>
-          <LinkButton frameName="root" href={MainUrl.HobbyProjects}>
+          <LinkButton frameName="root" href={AppRoutes.projects.$()}>
             <p>{t(Translation.HobbyProjects)}</p>
           </LinkButton>
         </div>
