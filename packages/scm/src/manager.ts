@@ -4,7 +4,10 @@ import { walk } from "node-os-walk";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { ContentReader } from "./content-reader";
-import type { ContentLoader } from "./loader-interface";
+import type {
+  ContentLoader,
+  ContentLoaderConstructor,
+} from "./loader-interface";
 import type { Locales } from "./locales.type";
 
 export type ContentEntry = {
@@ -14,13 +17,22 @@ export type ContentEntry = {
   language: string;
 };
 
-type ReaderFor<
-  C extends ContentLoader<any>,
-  K extends Record<string, string>
-> = ContentReader<
-  C extends ContentLoader<infer T> ? T : never,
-  K[Extract<keyof K, C["supportedExtensions"][number]>]
+export type LoaderExts<L extends ContentLoader<any>> =
+  L["supportedExtensions"][number];
+
+export type LoaderType<L extends ContentLoader<any>> = ReturnType<
+  L["parseContent"]
 >;
+
+export type LoaderTypeFor<
+  L extends ContentLoader<any>,
+  K extends string,
+> = L["contentTypes"][K];
+
+export type ReaderFor<
+  L extends ContentLoader<any>,
+  K extends Record<string, string>,
+> = ContentReader<L, K[Extract<keyof K, LoaderExts<L>>]>;
 
 function extractLoaderName(object: any): string {
   if (object.name) return object.name;
@@ -42,7 +54,7 @@ function extractLoaderName(object: any): string {
 export class ContentManager<K extends Record<string, string>> {
   static async create<K extends Record<string, string>>(
     contentLocation: string,
-    loaders: Array<ContentLoader<any>>
+    loaders: Array<ContentLoaderConstructor<any>>,
   ) {
     const manager = new ContentManager<K>(contentLocation, loaders);
     await manager.initialize();
@@ -51,11 +63,14 @@ export class ContentManager<K extends Record<string, string>> {
 
   private contents: Array<ContentEntry> = [];
   private availableLanguages: string[] = [];
+  private loaders: Array<ContentLoader<any>>;
 
   private constructor(
     private contentLocation: string,
-    private loaders: Array<ContentLoader<any>>
-  ) {}
+    loaders: Array<ContentLoaderConstructor<any>>,
+  ) {
+    this.loaders = loaders.map((loader) => new loader());
+  }
 
   private checkLanguageConsistency() {
     const incompleteContentFiles = new Set<string>();
@@ -63,7 +78,7 @@ export class ContentManager<K extends Record<string, string>> {
     const languageEntries = new Map<string, Array<ContentEntry>>();
     for (const language of this.availableLanguages) {
       const entries = this.contents.filter(
-        (entry) => entry.language === language
+        (entry) => entry.language === language,
       );
       languageEntries.set(language, entries);
     }
@@ -73,7 +88,7 @@ export class ContentManager<K extends Record<string, string>> {
       for (const content of languageContents) {
         if (
           languageEntriesValues.some(
-            (entries) => !entries.some((entry) => entry.key === content.key)
+            (entries) => !entries.some((entry) => entry.key === content.key),
           )
         ) {
           incompleteContentFiles.add(content.key);
@@ -84,8 +99,8 @@ export class ContentManager<K extends Record<string, string>> {
     for (const incompleteContentFile of incompleteContentFiles) {
       console.warn(
         chalk.yellowBright(
-          `Content file '${incompleteContentFile}' is not available in all languages.`
-        )
+          `Content file '${incompleteContentFile}' is not available in all languages.`,
+        ),
       );
     }
   }
@@ -93,7 +108,7 @@ export class ContentManager<K extends Record<string, string>> {
   private testAgainstLoader(loader: ContentLoader<any>, filepath: string) {
     const lowercased = filepath.toLowerCase();
     const extSupported = loader.supportedExtensions.some((e) =>
-      lowercased.endsWith(e.toLowerCase())
+      lowercased.endsWith(e.toLowerCase()),
     );
 
     if (!extSupported) return false;
@@ -105,13 +120,13 @@ export class ContentManager<K extends Record<string, string>> {
 
   private isFileSupported(filepath: string) {
     return this.loaders.some((loader) =>
-      this.testAgainstLoader(loader, filepath)
+      this.testAgainstLoader(loader, filepath),
     );
   }
 
   private getLoadersForFile(filepath: string) {
     return this.loaders.filter((loader) =>
-      this.testAgainstLoader(loader, filepath)
+      this.testAgainstLoader(loader, filepath),
     );
   }
 
@@ -120,7 +135,7 @@ export class ContentManager<K extends Record<string, string>> {
     const file = await fs.readFile(filepath);
     const relativeLocation = path.relative(
       path.resolve(this.contentLocation, language),
-      filepath
+      filepath,
     );
     const key = relativeLocation
       .split(RegExp(`(?<=(?<!\\\\)(?:\\\\\\\\)*)\\${path.sep}`))
@@ -139,9 +154,9 @@ export class ContentManager<K extends Record<string, string>> {
         console.error(
           chalk.redBright(
             `${extractLoaderName(
-              loader
-            )} loader failed to parse file: [ ${filepath} ]`
-          )
+              loader,
+            )} loader failed to parse file: [ ${filepath} ]`,
+          ),
         );
       }
     }
@@ -173,17 +188,21 @@ export class ContentManager<K extends Record<string, string>> {
     this.checkLanguageConsistency();
   }
 
-  getReader<C extends ContentLoader<any>>(
-    loader: C,
-    language: Locales
-  ): ReaderFor<C, K> {
-    if (this.loaders.some((l) => l === loader)) {
+  getReader<L extends ContentLoader<any>>(
+    loader: new () => L,
+    language: Locales,
+  ): ReaderFor<L, K> {
+    if (
+      this.loaders.some((l) => {
+        return l instanceof loader;
+      })
+    ) {
       // @ts-expect-error
-      return new ContentReader<T, K>(this, loader, language);
+      return new ContentReader(this, loader, language);
     }
 
     throw new Error(
-      `${extractLoaderName(loader)} loader not registered with this manager.`
+      `${extractLoaderName(loader)} loader not registered with this manager.`,
     );
   }
 }

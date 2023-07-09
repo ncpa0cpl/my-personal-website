@@ -9,7 +9,7 @@ segments:
       to: 2020-10-01T12:00:00.000Z,
     },
     {
-      id: amplifier,
+      id: 1,
       title: Amplifier,
       subtitle: Programista,
       description: Programowanie aplikacji webowych oraz mobilnych przy użyciu technologi React i React Native.,

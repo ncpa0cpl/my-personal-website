@@ -1,4 +1,4 @@
-import type { ContextMap } from "jsxte";
+import type { ComponentApi } from "jsxte";
 import { RequestResponseContext } from "jsxte-web-frames";
 import { LocalizationService } from "../../../localization/localization-service";
 import { Log } from "../../../utilities/log";
@@ -12,27 +12,23 @@ declare module "express-session" {
 
 export const LocalizationContextProvider = (
   props: JSXTE.PropsWithChildren<{}>,
-  context: ContextMap
+  { ctx }: ComponentApi,
 ) => {
-  const req = context.has(RequestResponseContext)
-    ? context.get(RequestResponseContext).req
-    : undefined;
+  const req = ctx.get(RequestResponseContext)?.req;
 
-  const current = context.has(LocalizationContext)
-    ? context.get(LocalizationContext)
-    : undefined;
+  const current = ctx.get(LocalizationContext);
 
   const lang = req?.session.lang;
 
   if (lang && lang !== current?.language) {
     try {
-      context.set(LocalizationContext, {
+      ctx.set(LocalizationContext, {
         language: lang,
         translator: LocalizationService.forLanguage(lang),
       });
     } catch (e) {
       Log.warning(
-        `Translations for non defined language was requested. [${lang}]`
+        `Translations for non defined language was requested. [${lang}]`,
       );
     }
   }

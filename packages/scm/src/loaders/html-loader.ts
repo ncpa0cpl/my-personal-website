@@ -1,7 +1,10 @@
-export const HtmlLoader = class HtmlLoader {
-  static supportedExtensions = [".html", ".htm"] as const;
+type DefaultContentMap = { [key: string]: string };
 
-  static parseContent(content: Buffer): string {
+export class HtmlLoader<ContentTypeMap = DefaultContentMap> {
+  readonly contentTypes!: ContentTypeMap;
+  readonly supportedExtensions = [".html", ".htm"] as const;
+
+  parseContent(content: Buffer): string {
     return content.toString("utf-8");
   }
-};
+}

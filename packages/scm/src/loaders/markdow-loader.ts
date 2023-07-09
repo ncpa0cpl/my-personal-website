@@ -1,7 +1,10 @@
-export const MarkdownLoader = class MarkdownLoader {
-  static supportedExtensions = [".md"] as const;
+type DefaultContentMap = Record<string, string>;
 
-  static parseContent(content: Buffer): string {
+export class MarkdownLoader<ContentTypeMap = DefaultContentMap> {
+  readonly contentTypes!: ContentTypeMap;
+  readonly supportedExtensions = [".md"] as const;
+
+  parseContent(content: Buffer): string {
     return content.toString("utf-8");
   }
-};
+}

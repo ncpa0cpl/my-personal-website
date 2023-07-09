@@ -3887,6 +3887,11 @@ htmlparser2@^6.1.0:
     domutils "^2.5.2"
     entities "^2.0.0"
 
+htmx.org@^1.9.2:
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/htmx.org/-/htmx.org-1.9.2.tgz#8850ed8895108eee46c2b4c2f70beb524fe54f3b"
+  integrity sha512-ZGbucKcalQyXdGUl+4Zt3xdRDPmNy70yNhMyDG1eDYUm/ImxmSo2rhIBDa53XitrAVhA+/CGgry+wJ1SO77wrA==
+
 http-cache-semantics@^4.0.0, http-cache-semantics@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/http-cache-semantics/-/http-cache-semantics-4.1.0.tgz#49e91c5cbf36c9b94bcfcd71c23d5249ec74e390"
@@ -4853,10 +4858,10 @@ jsxte-web-frames@ncpa0cpl/jsxte-web-frames#1.0.6:
   version "1.0.6"
   resolved "https://codeload.github.com/ncpa0cpl/jsxte-web-frames/tar.gz/5b8300311fcf1eee7c31f23aa9b69fb92844063e"
 
-jsxte@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/jsxte/-/jsxte-2.2.1.tgz#0871eafd5204db0e4cd2a696991ab8941f3d12e0"
-  integrity sha512-5TCVLGgmtbBKKL+Kq7DDd75wozha9wfUok36cwtOF4ly1ey2YwwIZhTg/wCgS9xGNViZIcA/Gk5Lenyu/+zE6Q==
+jsxte@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/jsxte/-/jsxte-3.0.0.tgz#7db4447400a0901d7daacb19f4f22026cbfb6104"
+  integrity sha512-jr0h7vQgKkn6PcQAt+sNiwtsp8WfV3qQOQ4DCtImvDk88MYZVIGxXy9L2jSjwTDyizsr68KGzZtvef9RX3ympA==
 
 just-diff-apply@^3.0.0:
   version "3.1.2"
@@ -6151,10 +6156,10 @@ prettier-plugin-jsdoc@^0.3.38:
     comment-parser "^1.3.1"
     mdast-util-from-markdown "^1.2.0"
 
-prettier@^2.6.2:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.6.2.tgz#e26d71a18a74c3d0f0597f55f01fb6c06c206032"
-  integrity sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==
+prettier@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.0.0.tgz#e7b19f691245a21d618c68bc54dc06122f6105ae"
+  integrity sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==
 
 pretty-error@^4.0.0:
   version "4.0.0"

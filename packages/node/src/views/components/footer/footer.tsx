@@ -1,11 +1,11 @@
-import type { ContextMap } from "jsxte";
-import { Link } from "jsxte-web-frames";
+import type { ComponentApi } from "jsxte";
 import { AppRoutes } from "../../../app-routes";
 import { Translation } from "../../../localization/dictionaries/keys";
 import { useTranslation } from "../../contexts/localization-context/use-translation";
+import { Link } from "../link/link";
 import { Svg } from "../svg/svg";
 
-export const Footer = (_: {}, context: ContextMap) => {
+export const Footer = (_: {}, context: ComponentApi) => {
   const t = useTranslation(context);
 
   return (
@@ -13,17 +13,17 @@ export const Footer = (_: {}, context: ContextMap) => {
       <section class="footer-links_box">
         <ul>
           <li>
-            <Link frameName="root" href={AppRoutes.home.$()}>
+            <Link hx-target="#content-container" href={AppRoutes.home.$()}>
               <p>{t(Translation.Home)}</p>
             </Link>
           </li>
           <li>
-            <Link frameName="root" href={AppRoutes.career.$()}>
+            <Link hx-target="#content-container" href={AppRoutes.career.$()}>
               <p>{t(Translation.Career)}</p>
             </Link>
           </li>
           <li>
-            <Link frameName="root" href={AppRoutes.projects.$()}>
+            <Link hx-target="#content-container" href={AppRoutes.projects.$()}>
               <p>{t(Translation.HobbyProjects)}</p>
             </Link>
           </li>

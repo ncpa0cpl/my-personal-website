@@ -1,23 +1,20 @@
 {
-  "devDependencies": {
-    "@types/jest": "^27.5.0",
-    "@typescript-eslint/eslint-plugin": "^5.37.0",
-    "@typescript-eslint/parser": "^5.37.0",
-    "concurrently": "^7.4.0",
-    "esbuild": "^0.15.6",
-    "eslint": "^8.23.1",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "husky": "^8.0.1",
-    "jest": "^28.1.0",
-    "prettier": "^2.6.2",
-    "prettier-plugin-jsdoc": "^0.3.38",
-    "ts-jest": "^28.0.2",
-    "ts-node": "^10.7.0",
-    "typescript": "^4.8.3"
-  },
   "name": "pc-builder",
   "version": "1.0.0",
+  "private": true,
+  "keywords": [],
+  "repository": {
+    "url": ""
+  },
+  "description": "",
+  "license": "MIT",
+  "author": {
+    "name": "",
+    "email": ""
+  },
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "build": "yarn workspaces run build",
     "watch:node": "yarn workspace node run watch",
@@ -33,21 +30,26 @@
     "generate-svg-names": "yarn workspace node generate-svg-names",
     "generate-content-declarations": "node ./packages/scm/scripts/generate-declaration.cjs -d ./packages/node/src/content -o ./packages/node/src/content/content-key.d.ts -ext .html,.md,.json,.yaml,.yml"
   },
-  "keywords": [],
-  "repository": {
-    "url": ""
-  },
-  "description": "",
-  "license": "MIT",
-  "author": {
-    "name": "",
-    "email": ""
-  },
-  "private": "true",
-  "workspaces": [
-    "packages/*"
-  ],
   "dependencies": {
+    "htmx.org": "^1.9.2",
     "jsxte-web-frames": "ncpa0cpl/jsxte-web-frames#1.0.6"
-  }
+  },
+  "devDependencies": {
+    "@types/jest": "^27.5.0",
+    "@typescript-eslint/eslint-plugin": "^5.37.0",
+    "@typescript-eslint/parser": "^5.37.0",
+    "concurrently": "^7.4.0",
+    "esbuild": "^0.15.6",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
+    "jest": "^28.1.0",
+    "prettier": "^3.0.0",
+    "prettier-plugin-jsdoc": "^0.3.38",
+    "ts-jest": "^28.0.2",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.8.3"
+  },
+  "packageManager": "yarn@1.22.19"
 }

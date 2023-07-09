@@ -50,11 +50,13 @@ async function main() {
         loader: {
           ".svg": "copy",
           ".ttf": "copy",
+          ".ico": "copy",
         },
       },
       extMapping: {
         ".svg": ".svg",
         ".ttf": ".ttf",
+        ".ico": ".ico",
       },
       watch,
     });

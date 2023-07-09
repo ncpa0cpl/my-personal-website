@@ -1,11 +1,22 @@
 import clsx from "clsx";
+import { HtmxRouterLink } from "jsxte-htmx";
 import type { LinkProps } from "jsxte-web-frames";
-import { Link } from "jsxte-web-frames";
 
 export type LinkButtonProps = LinkProps & {};
 
 export const LinkButton = (props: LinkButtonProps) => {
-  const { class: className, ...rest } = props;
+  const { class: className, href, frameName, ...rest } = props;
 
-  return <Link class={clsx(className, "link-btn_element")} {...rest} />;
+  return (
+    <HtmxRouterLink
+      class={clsx(className, "link-btn_element")}
+      {...rest}
+      href={href}
+      hx-vals={forwarderParams}
+      hx-push-url="true"
+    />
+  );
 };
+
+// eslint-disable-next-line quotes
+const forwarderParams = /* js */ `js:{...getLinkParams()}`;

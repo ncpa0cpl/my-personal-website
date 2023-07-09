@@ -1,4 +1,4 @@
-import type { ContextMap } from "jsxte";
+import type { ComponentApi } from "jsxte";
 import { AppRoutes } from "../../../app-routes";
 import { Translation } from "../../../localization/dictionaries/keys";
 import { useTranslation } from "../../contexts/localization-context/use-translation";
@@ -7,7 +7,7 @@ import { LinkButton } from "../link-button/link-button";
 import { Svg } from "../svg/svg";
 import { ThemeSwitch } from "../theme-switch/theme-switch";
 
-export const Navbar = (_: {}, context: ContextMap): JSX.Element => {
+export const Navbar = (_: {}, context: ComponentApi): JSX.Element => {
   const t = useTranslation(context);
 
   return (
@@ -19,14 +19,17 @@ export const Navbar = (_: {}, context: ContextMap): JSX.Element => {
           </a>
         </div>
         <div class="navbar-links-section_element">
-          <LinkButton frameName="root" href={AppRoutes.home.$()}>
+          <LinkButton href={AppRoutes.home.$()}>
             <p>{t(Translation.Home)}</p>
           </LinkButton>
-          <LinkButton frameName="root" href={AppRoutes.career.$()}>
+          <LinkButton href={AppRoutes.career.$()}>
             <p>{t(Translation.Career)}</p>
           </LinkButton>
-          <LinkButton frameName="root" href={AppRoutes.projects.$()}>
+          <LinkButton href={AppRoutes.projects.$()}>
             <p>{t(Translation.HobbyProjects)}</p>
+          </LinkButton>
+          <LinkButton href={AppRoutes.home.card.$as("card-3").$()}>
+            <p>Main Page Last Card</p>
           </LinkButton>
         </div>
         <div class="navbar-non-links-section_element">

@@ -1,3 +1,4 @@
+import { HtmxScript } from "jsxte-htmx";
 import { stylesheet } from "../../../global-stylesheet";
 import { LocalizationContextProvider } from "../../contexts/localization-context/provider";
 
@@ -15,6 +16,7 @@ export const PageBase = (
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {stylesheet}
         <script src="/static/main.mjs" type="module"></script>
+        <HtmxScript />
       </head>
       <body>
         <script src="/js-modules/theme-switch.js"></script>

@@ -1,7 +1,10 @@
-export const TextLoader = class TextLoader {
-  static supportedExtensions = [".txt"] as const;
+type DefaultContentMap = Record<string, string>;
 
-  static parseContent(content: Buffer): string {
+export class TextLoader<ContentTypeMap = DefaultContentMap> {
+  readonly contentTypes!: ContentTypeMap;
+  readonly supportedExtensions = [".txt"] as const;
+
+  parseContent(content: Buffer): string {
     return content.toString("utf-8");
   }
-};
+}

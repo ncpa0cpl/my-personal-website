@@ -9,5 +9,8 @@
   "cssVarriablesAutocomplete.files": [
     "./packages/node/src/views/variables.css"
   ],
-  "cSpell.language": "en,pl"
+  "cSpell.language": "en,pl",
+  "cSpell.words": [
+    "Htmx"
+  ]
 }

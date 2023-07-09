@@ -1,6 +1,8 @@
-import { Link } from "jsxte-web-frames";
+import type { ComponentApi } from "jsxte";
 import { DateTime } from "luxon";
 import { AppRoutes } from "../../../app-routes";
+import { useContent } from "../../contexts/localization-context/use-content";
+import { Link } from "../link/link";
 
 export type TimelineSegment = {
   id: string | number;
@@ -11,29 +13,32 @@ export type TimelineSegment = {
   to: string;
 };
 
-export type TimelineProps = {
-  segments: TimelineSegment[];
-};
+export const Timeline = (_: {}, context: ComponentApi) => {
+  const content = useContent(context);
 
-export const Timeline = (props: TimelineProps) => {
+  const segments = content.yaml.get("career-timeline").segments;
+
   const formatDate = (date: string) =>
     (date === "%NOW%" ? DateTime.now() : DateTime.fromISO(date)).toFormat(
-      "yyyy LLL"
+      "yyyy LLL",
     );
 
   return (
     <ul class="timeline_box">
-      {props.segments.map((segment, index) => (
+      {segments.map((segment, index) => (
         <li class="timeline-segment_element">
           <div class="timeline-segment-decoration_element">
             <span role="presentation" class="timeline-segment-dot_element" />
-            {index !== props.segments.length - 1 && (
+            {index !== segments.length - 1 && (
               <span role="presentation" class="timeline-segment-line_element" />
             )}
           </div>
           <div class="timeline-segment-content_element">
             <div class="timeline-segment-title_element">
-              <Link href={AppRoutes.career.company.$as(segment.id).$()}>
+              <Link
+                hx-target="#content-container"
+                href={AppRoutes.career.company.$as(segment.id).$()}
+              >
                 <p>{segment.title}</p>
               </Link>
             </div>

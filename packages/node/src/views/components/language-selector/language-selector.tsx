@@ -1,9 +1,9 @@
-import type { ContextMap } from "jsxte";
+import type { ComponentApi } from "jsxte";
 import { useCurrentLanguage } from "../../contexts/localization-context/use-current-language";
 import { PopDown } from "../pop-down/pop-down";
 import { Svg } from "../svg/svg";
 
-export const LanguageSelector = (_: {}, context: ContextMap) => {
+export const LanguageSelector = (_: {}, context: ComponentApi) => {
   const currentLanguage = useCurrentLanguage(context);
 
   const renderLanguageSwitchButtons = () => {
